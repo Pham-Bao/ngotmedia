@@ -1,0 +1,42 @@
+<footer class="chan-trang">
+  <div class="wrap luoi-chan-trang">
+    <div class="cot-thuong-hieu">
+      <a class="logo" routerLink="/">
+        <span class="logo-hop">
+          <img src="/logo/FILE NGOT XOAN copyq.png" alt="Ngọt Media" />
+        </span>
+        <b>Ngọt Media</b>
+      </a>
+      <p class="muted small">
+        Studio chụp ảnh chân dung, cưới, gia đình và thương hiệu — lưu giữ khoảnh khắc thật
+        bằng góc nhìn tinh tế và chuyên nghiệp.
+      </p>
+    </div>
+
+    <div class="cot-lien-ket">
+      <p class="eyebrow">Liên kết nhanh</p>
+      @for (muc of lienKetNhanh; track muc.duongDan) {
+        <a [routerLink]="muc.duongDan">{{ muc.nhan }}</a>
+      }
+    </div>
+
+    <div class="cot-lien-he">
+      <p class="eyebrow">Liên hệ</p>
+      <p class="small">123 Đường ABC, Quận 1, TP.HCM</p>
+      <p class="small">0900 000 000</p>
+      <p class="small">hello@ngotmedia.vn</p>
+    </div>
+
+    <div class="cot-mang-xa-hoi">
+      <p class="eyebrow">Theo dõi</p>
+      @for (muc of mangXaHoi; track muc.nhan) {
+        <a [href]="muc.duongDan">{{ muc.nhan }}</a>
+      }
+    </div>
+  </div>
+
+  <div class="wrap dong-cuoi">
+    <p class="small muted">© {{ namHienTai }} Ngọt Media. Đã đăng ký bản quyền.</p>
+    <p class="small muted">* Thông tin liên hệ ở trên là dữ liệu minh hoạ.</p>
+  </div>
+</footer>

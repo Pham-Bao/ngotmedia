@@ -1,0 +1,63 @@
+<section class="hero reveal" #revealEl>
+  <img class="hero-anh" src="/baner/anh-trang-dich-vu.jpg" alt="Buổi chụp ảnh của Ngọt Media" />
+  <div class="hero-phu"></div>
+  <div class="wrap hero-noi-dung">
+    <p class="eyebrow">Dịch vụ &amp; bảng giá</p>
+    <h1>Chụp giữ <span class="serif-i">khoảnh khắc thật</span>, kể câu chuyện của riêng bạn.</h1>
+    <p class="lead">
+      Ngọt Media nhận chụp ảnh chân dung, cưới, gia đình và thương hiệu — mỗi buổi chụp được
+      thiết kế riêng theo phong cách và câu chuyện của khách hàng.
+    </p>
+  </div>
+</section>
+
+<p class="wrap small muted ghi-chu-minh-hoa reveal" #revealEl>
+  * Nội dung minh hoạ — sẽ cập nhật theo dịch vụ và bảng giá chính thức của Ngọt Media.
+</p>
+
+<section class="wrap section">
+  <p class="eyebrow reveal" #revealEl>Các gói dịch vụ</p>
+  <div class="luoi-dich-vu">
+    @for (goi of danhSachDichVu; track goi.ten) {
+      <article class="card the-dich-vu reveal" #revealEl>
+        <h3>{{ goi.ten }}</h3>
+        <p class="muted">{{ goi.moTa }}</p>
+        <p class="gia">{{ goi.gia }}</p>
+        <ul class="diem-noi-bat">
+          @for (diem of goi.diemNoiBat; track diem) {
+            <li>{{ diem }}</li>
+          }
+        </ul>
+        <a class="btn btn-ghost btn-sm" href="#">Xem chi tiết</a>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="wrap section">
+  <p class="eyebrow reveal" #revealEl>Câu hỏi thường gặp</p>
+  <div class="danh-sach-faq reveal" #revealEl>
+    @for (cau of danhSachCauHoi; track cau.hoi; let chiSo = $index) {
+      <div class="muc-faq">
+        <button
+          type="button"
+          class="tieu-de-faq"
+          (click)="chuyenFaq(chiSo)"
+          [attr.aria-expanded]="chiSoFaqDangMo() === chiSo"
+        >
+          <span>{{ cau.hoi }}</span>
+          <span class="dau-faq">{{ chiSoFaqDangMo() === chiSo ? '−' : '+' }}</span>
+        </button>
+        <div class="noi-dung-faq" [class.mo]="chiSoFaqDangMo() === chiSo">
+          <p>{{ cau.dap }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="wrap section cta-cuoi reveal" #revealEl>
+  <h2>Sẵn sàng lưu giữ khoảnh khắc của bạn?</h2>
+  <p class="lead">Liên hệ Ngọt Media để được tư vấn gói chụp phù hợp nhất.</p>
+  <a class="btn btn-primary" href="#">Đặt lịch chụp</a>
+</section>

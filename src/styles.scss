@@ -1,1 +1,247 @@
-/* You can add global styles to this file, and also import other style files */
+// Design tokens dùng chung cho toàn bộ website Ngọt Media
+:root {
+  --mau-nen: #f7f3ec;
+  --mau-chu: #1a1712;
+  --mau-chu-2: #3d372e;
+  --mau-chu-3: #6e6656;
+  --mau-vien: #e6dfd0;
+  --mau-vien-2: rgba(26, 23, 18, 0.18);
+  --mau-vien-3: rgba(26, 23, 18, 0.32);
+
+  // Màu chủ đạo Ngọt Media (theo CLAUDE.md)
+  --mau-nhan: #264653; // xanh rêu đệm
+  --mau-nhan-toi: #1a323c;
+  --mau-nhan-2: #f4acb7; // hồng đất
+  --mau-nhan-2-toi: #ec8a99;
+
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+
+  --khoang-cach: clamp(16px, 4.6vw, 20px);
+  --rong-toi-da: 1200px;
+  --do-doc-vb: cubic-bezier(0.22, 0.61, 0.21, 1);
+  --cao-header: 65px;
+}
+
+@media (min-width: 720px) {
+  :root {
+    --khoang-cach: 40px;
+  }
+}
+
+@media (min-width: 1080px) {
+  :root {
+    --khoang-cach: 72px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--mau-nen);
+  color: var(--mau-chu);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+// Header giờ là position:fixed (để trong suốt nổi trên ảnh hero được) nên
+// không còn chiếm chỗ trong layout — bù lại khoảng trống này ở đầu mỗi trang.
+// Trang nào có hero tràn viền (trang chủ, dịch vụ) sẽ tự trừ ngược khoảng này
+// trên chính section hero của nó để ảnh tràn lên sát mép trên, ẩn sau header.
+app-trang-chu,
+app-dich-vu,
+app-thu-vien {
+  display: block;
+  padding-top: var(--cao-header);
+}
+
+.wrap {
+  max-width: var(--rong-toi-da);
+  margin: 0 auto;
+  padding-left: var(--khoang-cach);
+  padding-right: var(--khoang-cach);
+}
+
+// Bản rộng hơn của .wrap — dùng cho các lưới ảnh dày đặc (thư viện) cần nhiều chỗ hơn
+.wrap-rong {
+  max-width: 1760px;
+  margin: 0 auto;
+  padding-left: var(--khoang-cach);
+  padding-right: var(--khoang-cach);
+}
+
+.section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mau-chu-3);
+  margin-bottom: 12px;
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--mau-chu-2);
+  max-width: 60ch;
+}
+
+.serif-i {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--mau-nhan-2);
+}
+
+.muted {
+  color: var(--mau-chu-3);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+// Nút bấm
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.8em 1.4em;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid var(--mau-chu);
+  cursor: pointer;
+  transition:
+    background-color 0.22s var(--do-doc-vb),
+    color 0.22s var(--do-doc-vb),
+    border-color 0.22s var(--do-doc-vb);
+}
+
+.btn-primary {
+  background: var(--mau-nhan);
+  border-color: var(--mau-nhan);
+  color: var(--mau-nen);
+}
+
+.btn-primary:hover {
+  background: var(--mau-nhan-toi);
+  border-color: var(--mau-nhan-toi);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--mau-chu);
+  border-color: var(--mau-vien-3);
+}
+
+.btn-ghost:hover {
+  border-color: var(--mau-nhan);
+  color: var(--mau-nhan);
+}
+
+.btn-sm {
+  padding: 0.6em 1.1em;
+  font-size: 0.85rem;
+}
+
+// Khung tròn có màu đặt logo lên trên, giúp logo nổi bật trên mọi nền
+.logo-hop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  border-radius: 999px;
+  background: var(--mau-nhan);
+  overflow: hidden;
+}
+
+.logo-hop img {
+  width: 68%;
+  height: 68%;
+  object-fit: contain;
+}
+
+// Thẻ (card)
+.card {
+  border: 1px solid var(--mau-vien);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+// Khối CTA cuối trang — dùng lại ở nhiều trang (dịch vụ, trang chủ...)
+.cta-cuoi {
+  text-align: center;
+  border-top: 1px solid var(--mau-vien);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cta-cuoi .lead {
+  max-width: 48ch;
+}
+
+// Link mũi tên "Xem tất cả..."
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--mau-chu);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--mau-chu);
+  padding-bottom: 2px;
+  transition: color 0.2s var(--do-doc-vb), border-color 0.2s var(--do-doc-vb);
+}
+
+.more:hover {
+  color: var(--mau-nhan);
+  border-color: var(--mau-nhan);
+}
+
+// Hiệu ứng xuất hiện khi cuộn trang
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s var(--do-doc-vb),
+    transform 0.7s var(--do-doc-vb);
+}
+
+.reveal.hien-ra {
+  opacity: 1;
+  transform: none;
+}

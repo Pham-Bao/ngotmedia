@@ -1,0 +1,98 @@
+<section class="tuong-khung" #tuongKhung>
+  <div class="tuong-anh">
+    <div class="tuong-cot-khu">
+      @for (cot of cotTuongAnh; track $index) {
+        <div class="tuong-cot">
+          <div class="tuong-track" #cotTrack>
+            @for (file of cot; track file) {
+              <img [src]="file" alt="" loading="lazy" />
+            }
+            @for (file of cot; track file) {
+              <img [src]="file" alt="" loading="lazy" />
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="tuong-phu"></div>
+
+    <div class="wrap tuong-noi-dung" #tuongPlate>
+      <p class="eyebrow">Studio chụp ảnh chuyên nghiệp</p>
+      <h1 class="tuong-mark">Ngọt Media</h1>
+      <p class="tuong-dong">Chân dung đẹp nhất của bạn, kể đúng câu chuyện của riêng bạn.</p>
+      <p class="tuong-so-lieu">{{ tongSoAnh }}+ ảnh lưu trữ · 5 phong cách chụp</p>
+    </div>
+
+    <div class="tuong-goi-y" aria-hidden="true"><i></i>cuộn</div>
+  </div>
+</section>
+
+<section class="khoanh-khac">
+  <img class="khoanh-khac-anh" src="/baner/anh-trang-chu.jpg" alt="" />
+  <div class="khoanh-khac-phu"></div>
+  <div class="wrap khoanh-khac-noi-dung reveal" #revealEl>
+    <p class="khoanh-khac-cau">Ai cũng xứng đáng có một bức chân dung thật là mình.</p>
+  </div>
+</section>
+
+<section class="wrap section gioi-thieu-ngan reveal" #revealEl>
+  <p class="eyebrow">Về Ngọt Media</p>
+  <h2>Chúng tôi tin mỗi khoảnh khắc đều xứng đáng được kể bằng hình ảnh đẹp.</h2>
+  <p class="lead">
+    Ngọt Media là studio chụp ảnh chuyên nghiệp, tập trung vào chân dung, cưới, gia đình và
+    thương hiệu — mỗi buổi chụp được đầu tư từ concept, ánh sáng đến hậu kỳ để mang lại bộ ảnh
+    có chiều sâu và cảm xúc thật.
+  </p>
+</section>
+
+<section class="wrap section dich-vu-noi-bat reveal" #revealEl>
+  <p class="eyebrow">Dịch vụ</p>
+  <h2>Chọn phong cách phù hợp với bạn.</h2>
+  <div class="luoi-dv-nb">
+    @for (dv of dichVuNoiBat; track dv.ten) {
+      <div class="the-dv-nb">
+        <h3>{{ dv.ten }}</h3>
+        <p class="muted">{{ dv.moTa }}</p>
+      </div>
+    }
+  </div>
+  <a class="more" routerLink="/dich-vu">Xem tất cả dịch vụ →</a>
+</section>
+
+<section class="wrap-rong section thu-vien-noi-bat reveal" #revealEl>
+  <div class="wrap sec-dau">
+    <p class="eyebrow">Thư viện</p>
+    <h2>Một vài khoảnh khắc gần đây.</h2>
+  </div>
+  <div class="luoi-tv-nb">
+    @for (anh of anhNoiBat; track anh.id) {
+      <a class="the-tv-nb" routerLink="/thu-vien" [queryParams]="{ anh: anh.id }">
+        <img [src]="anh.file" alt="" loading="lazy" />
+      </a>
+    }
+  </div>
+  <div class="wrap">
+    <a class="more" routerLink="/thu-vien">Xem toàn bộ thư viện →</a>
+  </div>
+</section>
+
+<section class="wrap section quy-trinh reveal" #revealEl>
+  <p class="eyebrow">Quy trình</p>
+  <h2>Đơn giản trong 3 bước.</h2>
+  <div class="luoi-buoc">
+    @for (buoc of cacBuocQuyTrinh; track buoc.so) {
+      <div class="the-buoc">
+        <span class="so-buoc">{{ buoc.so }}</span>
+        <h3>{{ buoc.ten }}</h3>
+        <p class="muted">{{ buoc.moTa }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="wrap section cta-cuoi reveal" #revealEl>
+  <h2>Sẵn sàng lưu giữ khoảnh khắc của bạn?</h2>
+  <p class="lead">Liên hệ Ngọt Media để được tư vấn gói chụp phù hợp nhất.</p>
+  <a class="btn btn-primary" href="#">Đặt lịch chụp</a>
+</section>

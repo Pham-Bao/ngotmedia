@@ -1,0 +1,146 @@
+.hero {
+  position: relative;
+  margin-top: calc(-1 * var(--cao-header));
+  min-height: min(76vh, 620px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-anh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-phu {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26, 23, 18, 0.1) 0%, rgba(26, 23, 18, 0.78) 100%);
+}
+
+.hero-noi-dung {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.hero-noi-dung .eyebrow {
+  color: rgba(247, 243, 236, 0.75);
+}
+
+.hero-noi-dung h1 {
+  color: var(--mau-nen);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  max-width: 18ch;
+  margin-bottom: 18px;
+}
+
+.hero-noi-dung .lead {
+  color: rgba(247, 243, 236, 0.92);
+}
+
+.ghi-chu-minh-hoa {
+  padding-top: 16px;
+  display: block;
+}
+
+.luoi-dich-vu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.the-dich-vu {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.25s var(--do-doc-vb);
+}
+
+.the-dich-vu:hover {
+  border-color: var(--mau-nhan-2);
+}
+
+.the-dich-vu h3 {
+  font-size: 1.2rem;
+}
+
+.the-dich-vu .gia {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--mau-nhan);
+}
+
+.diem-noi-bat {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: var(--mau-chu-2);
+}
+
+.the-dich-vu .btn {
+  align-self: flex-start;
+  margin-top: 6px;
+}
+
+.danh-sach-faq {
+  border-top: 1px solid var(--mau-vien);
+  margin-top: 20px;
+}
+
+.muc-faq {
+  border-bottom: 1px solid var(--mau-vien);
+}
+
+.tieu-de-faq {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: 0;
+  text-align: left;
+  padding: 18px 2px;
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  color: var(--mau-chu);
+}
+
+.dau-faq {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--mau-chu-3);
+  flex: none;
+  transition: color 0.25s var(--do-doc-vb);
+}
+
+.tieu-de-faq[aria-expanded='true'] .dau-faq {
+  color: var(--mau-nhan-2);
+}
+
+.noi-dung-faq {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--do-doc-vb);
+}
+
+.noi-dung-faq.mo {
+  max-height: 200px;
+}
+
+.noi-dung-faq p {
+  padding: 0 2px 20px;
+  color: var(--mau-chu-2);
+  max-width: 68ch;
+  font-size: 0.92rem;
+}
+

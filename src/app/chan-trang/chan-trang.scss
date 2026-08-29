@@ -1,0 +1,67 @@
+.chan-trang {
+  border-top: 1px solid var(--mau-vien);
+  margin-top: 64px;
+  padding-top: 48px;
+}
+
+.luoi-chan-trang {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  padding-bottom: 32px;
+}
+
+.cot-thuong-hieu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 32ch;
+}
+
+.cot-thuong-hieu .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6ch;
+  text-decoration: none;
+  color: var(--mau-chu);
+}
+
+.cot-thuong-hieu .logo .logo-hop {
+  width: 32px;
+  height: 32px;
+}
+
+.cot-thuong-hieu .logo b {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.cot-lien-ket,
+.cot-lien-he,
+.cot-mang-xa-hoi {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cot-lien-ket a,
+.cot-mang-xa-hoi a {
+  text-decoration: none;
+  color: var(--mau-chu-3);
+  font-size: 0.9rem;
+}
+
+.cot-lien-ket a:hover,
+.cot-mang-xa-hoi a:hover {
+  color: var(--mau-nhan);
+}
+
+.dong-cuoi {
+  border-top: 1px solid var(--mau-vien);
+  padding: 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+}

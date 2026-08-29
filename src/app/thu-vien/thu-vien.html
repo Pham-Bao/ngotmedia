@@ -1,0 +1,143 @@
+<section class="wrap section tv-dau reveal" #revealEl>
+  <p class="eyebrow">Thư viện ảnh</p>
+  <h1>Xem đúng <span class="serif-i">phong cách ảnh</span> bạn đang tìm.</h1>
+  <p class="lead">
+    Bộ sưu tập ảnh thực tế từ các buổi chụp của Ngọt Media — chọn nhóm bên dưới để xem theo
+    phong cách bạn thích, bấm biểu tượng tim để lưu ảnh bạn ưng ý.
+  </p>
+</section>
+
+<div class="tv-thanh">
+  <div class="wrap-rong tv-tabs">
+    <button type="button" class="tv-tab" [class.dang-chon]="boLocDangChon() === 'tat-ca'" (click)="chonBoLoc('tat-ca')">
+      Tất cả <span class="tv-so">{{ tongSoAnh }}</span>
+    </button>
+    @for (nhom of danhSachNhom; track nhom) {
+      <button
+        type="button"
+        class="tv-tab"
+        [class.dang-chon]="boLocDangChon() === nhom"
+        (click)="chonBoLoc(nhom)"
+      >
+        {{ nhanNhom[nhom] }}
+      </button>
+    }
+    <button
+      type="button"
+      class="tv-tab tv-tab-luu"
+      [class.dang-chon]="boLocDangChon() === 'da-luu'"
+      (click)="chonBoLoc('da-luu')"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M12 21.35 10.55 20C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.5L12 21.35Z"
+        />
+      </svg>
+      Đã lưu <span class="tv-so">{{ soAnhDaLuu() }}</span>
+    </button>
+  </div>
+</div>
+
+<section class="wrap-rong section tv-luoi-khu">
+  @if (boLocDangChon() === 'da-luu' && anhDaLoc().length === 0) {
+    <div class="tv-trong">
+      <b>Chưa có ảnh nào được lưu</b>
+      <span>Bấm biểu tượng tim trên ảnh bạn thích để lưu lại xem sau.</span>
+    </div>
+  } @else {
+    <div class="luoi-thu-vien">
+      @for (anh of anhDaLoc(); track anh.id; let i = $index) {
+        <div class="the-anh-tv reveal" #revealEl>
+          <button type="button" class="tv-nut-xem" (click)="moAnh(i)">
+            <img [src]="anh.file" [alt]="nhanNhom[anh.nhom]" loading="lazy" />
+          </button>
+          <button
+            type="button"
+            class="tv-nut-luu"
+            [class.da-luu]="laDaLuu(anh.id)"
+            (click)="chuyenLuu(anh.id, $event)"
+            [attr.aria-label]="laDaLuu(anh.id) ? 'Bỏ lưu ảnh' : 'Lưu ảnh'"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 21.35 10.55 20C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.5L12 21.35Z"
+              />
+            </svg>
+          </button>
+        </div>
+      }
+    </div>
+  }
+</section>
+
+@if (anhXemHienTai(); as anh) {
+  <div class="tv-chitiet-nen">
+    <div class="tv-chitiet-cuon">
+      <div class="wrap-rong tv-chitiet-dau">
+        <button type="button" class="tv-tron" (click)="dongAnh()" aria-label="Quay lại thư viện">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M19 12H5M5 12l6-6M5 12l6 6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="wrap-rong tv-chitiet-khung">
+        <div class="tv-chitiet-anh">
+          <img [src]="anh.file" [alt]="nhanNhom[anh.nhom]" />
+
+          <button type="button" class="tv-dieu-huong tv-truoc" (click)="chuyenAnh(-1)" aria-label="Ảnh trước">
+            ‹
+          </button>
+          <button type="button" class="tv-dieu-huong tv-sau" (click)="chuyenAnh(1)" aria-label="Ảnh sau">›</button>
+        </div>
+
+        <div class="tv-chitiet-thongtin">
+          <div class="tv-chitiet-hang-nut">
+            <div class="tv-menu-boc">
+              <button type="button" class="tv-tron" (click)="chuyenMenu()" aria-label="Thêm tuỳ chọn">⋯</button>
+              @if (menuMoRong()) {
+                <div class="tv-menu-tha">
+                  <button type="button" (click)="saoChepLienKet()">
+                    {{ daSaoChepLienKet() ? 'Đã sao chép ✓' : 'Sao chép liên kết ảnh' }}
+                  </button>
+                  <a [href]="anh.file" [download]="anh.file.split('/').pop()" (click)="dongMenu()">Tải ảnh này</a>
+                  <button type="button" (click)="dongMenu()">Đóng</button>
+                </div>
+              }
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-primary tv-nut-luu-chitiet"
+              [class.da-luu]="laDaLuu(anh.id)"
+              (click)="chuyenLuu(anh.id, $event)"
+            >
+              {{ laDaLuu(anh.id) ? 'Đã lưu' : 'Lưu' }}
+            </button>
+          </div>
+
+          <h2>{{ nhanNhom[anh.nhom] }}</h2>
+          <p class="small muted">Ảnh {{ (chiSoDangXem() ?? 0) + 1 }}/{{ anhDaLoc().length }}</p>
+
+          <div class="tv-chitiet-cta">
+            <a class="btn btn-ghost" href="#">Nhắn Zalo hỏi ảnh này</a>
+            <a class="btn btn-primary" href="#">Đặt lịch chụp</a>
+          </div>
+        </div>
+      </div>
+
+      @if (anhLienQuan().length > 0) {
+        <div class="wrap-rong tv-lienquan">
+          <h3>Ảnh liên quan</h3>
+          <div class="tv-luoi-lienquan">
+            @for (a of anhLienQuan(); track a.id) {
+              <button type="button" class="tv-the-lienquan" (click)="moAnhTheoId(a.id)">
+                <img [src]="a.file" [alt]="nhanNhom[a.nhom]" loading="lazy" />
+              </button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+}

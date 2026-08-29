@@ -1,0 +1,447 @@
+.tv-dau h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  max-width: 20ch;
+  margin-bottom: 18px;
+}
+
+// Thanh lọc dính (sticky) ngay dưới header — gắn liền thành 1 khối thay vì
+// các chip rời rạc nổi trên nền trang.
+.tv-thanh {
+  position: sticky;
+  top: var(--cao-header);
+  z-index: 90;
+  background: rgba(247, 243, 236, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--mau-vien);
+}
+
+.tv-tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tv-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tv-tab {
+  flex: none;
+  border: 0;
+  background: transparent;
+  color: var(--mau-chu-3);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0 14px;
+  height: 52px;
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.2s var(--do-doc-vb);
+}
+
+.tv-tab:hover {
+  color: var(--mau-chu);
+}
+
+.tv-tab.dang-chon {
+  color: var(--mau-chu);
+}
+
+.tv-tab.dang-chon::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--mau-nhan);
+}
+
+.tv-so {
+  opacity: 0.65;
+  font-size: 0.85em;
+  margin-left: 2px;
+}
+
+.tv-tab-luu {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.tv-tab-luu svg {
+  width: 16px;
+  height: 16px;
+  color: var(--mau-nhan-2);
+  flex: none;
+}
+
+.tv-luoi-khu {
+  padding-top: 24px;
+}
+
+.tv-trong {
+  border: 1px dashed var(--mau-vien-3);
+  border-radius: 14px;
+  padding: 56px 20px;
+  text-align: center;
+}
+
+.tv-trong b {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.2rem;
+  display: block;
+}
+
+.tv-trong span {
+  font-size: 0.9rem;
+  color: var(--mau-chu-3);
+  display: block;
+  margin-top: 8px;
+}
+
+.luoi-thu-vien {
+  column-count: 1;
+  column-gap: 14px;
+}
+
+@media (min-width: 536px) {
+  .luoi-thu-vien {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 788px) {
+  .luoi-thu-vien {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1040px) {
+  .luoi-thu-vien {
+    column-count: 4;
+  }
+}
+
+@media (min-width: 1292px) {
+  .luoi-thu-vien {
+    column-count: 5;
+  }
+}
+
+@media (min-width: 1544px) {
+  .luoi-thu-vien {
+    column-count: 6;
+  }
+}
+
+.the-anh-tv {
+  position: relative;
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--mau-vien);
+}
+
+.tv-nut-xem {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.tv-nut-xem img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s var(--do-doc-vb);
+}
+
+.the-anh-tv:hover .tv-nut-xem img {
+  transform: scale(1.03);
+}
+
+// Nút lưu (hình tim) đè lên góc ảnh
+.tv-nut-luu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(26, 23, 18, 0.4);
+  color: var(--mau-nen);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition:
+    background-color 0.2s var(--do-doc-vb),
+    color 0.2s var(--do-doc-vb),
+    transform 0.2s var(--do-doc-vb);
+}
+
+.tv-nut-luu svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tv-nut-luu:hover {
+  transform: scale(1.08);
+}
+
+.tv-nut-luu.da-luu {
+  background: var(--mau-nhan-2);
+  color: var(--mau-chu);
+}
+
+// Màn chi tiết 1 ảnh — ảnh lớn bên trái, thông tin + CTA bên phải, ảnh liên quan bên dưới.
+.tv-chitiet-nen {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: var(--mau-nen);
+  overflow-y: auto;
+}
+
+.tv-chitiet-cuon {
+  min-height: 100%;
+  padding-bottom: 64px;
+}
+
+.tv-chitiet-dau {
+  padding-top: 20px;
+}
+
+.tv-tron {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--mau-vien-3);
+  background: var(--mau-nen);
+  color: var(--mau-chu);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex: none;
+}
+
+.tv-tron svg {
+  width: 20px;
+  height: 20px;
+}
+
+.tv-chitiet-khung {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+@media (min-width: 900px) {
+  .tv-chitiet-khung {
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 380px);
+    align-items: stretch;
+  }
+}
+
+.tv-chitiet-anh {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--mau-vien);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 78vh;
+}
+
+.tv-chitiet-anh img {
+  width: 100%;
+  height: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+}
+
+.tv-dieu-huong {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(26, 23, 18, 0.45);
+  color: var(--mau-nen);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tv-truoc {
+  left: 14px;
+}
+
+.tv-sau {
+  right: 14px;
+}
+
+.tv-chitiet-thongtin {
+  border: 1px solid var(--mau-vien);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tv-chitiet-hang-nut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.tv-menu-boc {
+  position: relative;
+}
+
+.tv-menu-tha {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 5;
+  min-width: 200px;
+  background: var(--mau-nen);
+  border: 1px solid var(--mau-vien);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(26, 23, 18, 0.14);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+}
+
+.tv-menu-tha button,
+.tv-menu-tha a {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 0;
+  background: none;
+  border-radius: 8px;
+  color: var(--mau-chu-2);
+  font-size: 0.88rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tv-menu-tha button:hover,
+.tv-menu-tha a:hover {
+  background: var(--mau-vien);
+  color: var(--mau-chu);
+}
+
+.tv-nut-luu-chitiet.da-luu {
+  background: var(--mau-nhan-2);
+  border-color: var(--mau-nhan-2);
+  color: var(--mau-chu);
+}
+
+.tv-chitiet-thongtin h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.tv-chitiet-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tv-chitiet-cta .btn {
+  width: 100%;
+}
+
+.tv-lienquan {
+  margin-top: 40px;
+}
+
+.tv-lienquan h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.tv-luoi-lienquan {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 560px) {
+  .tv-luoi-lienquan {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .tv-luoi-lienquan {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.tv-the-lienquan {
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--mau-vien);
+  cursor: pointer;
+  line-height: 0;
+  aspect-ratio: 3 / 4;
+}
+
+.tv-the-lienquan img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s var(--do-doc-vb);
+}
+
+.tv-the-lienquan:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+  .tv-chitiet-anh {
+    max-height: 60vh;
+  }
+
+  .tv-chitiet-anh img {
+    max-height: 60vh;
+  }
+}

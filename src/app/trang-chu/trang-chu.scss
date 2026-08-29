@@ -1,0 +1,292 @@
+// ===== Hero "wall" — nhiều cột ảnh tự cuộn liên tục =====
+// .tuong-khung cao hơn 100vh để .tuong-anh ghim lại (sticky) một đoạn khi
+// cuộn qua, rồi mới nhả ra chuyển tiếp mượt sang section "khoảnh khắc".
+.tuong-khung {
+  position: relative;
+  margin-top: calc(-1 * var(--cao-header));
+  height: 220svh;
+}
+
+.tuong-anh {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+  background: var(--mau-chu);
+}
+
+.tuong-cot-khu {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+@media (min-width: 720px) {
+  .tuong-cot-khu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .tuong-cot-khu {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.tuong-cot {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+// Component dựng sẵn 5 cột — CSS chỉ hiện đúng số cột phù hợp màn hình
+.tuong-cot:nth-child(4),
+.tuong-cot:nth-child(5) {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .tuong-cot:nth-child(4) {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tuong-cot:nth-child(5) {
+    display: block;
+  }
+}
+
+.tuong-track {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  will-change: transform;
+}
+
+.tuong-track img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+.tuong-phu {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 23, 18, 0.5) 0%,
+    rgba(26, 23, 18, 0.3) 45%,
+    rgba(26, 23, 18, 0.98) 100%
+  );
+}
+
+.tuong-noi-dung {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--mau-nen);
+  will-change: opacity, transform;
+}
+
+.tuong-noi-dung .eyebrow {
+  color: rgba(247, 243, 236, 0.8);
+}
+
+.tuong-mark {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  color: var(--mau-nen);
+  margin: 8px 0 16px;
+}
+
+.tuong-dong {
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+  max-width: 40ch;
+  color: rgba(247, 243, 236, 0.94);
+}
+
+.tuong-so-lieu {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: rgba(247, 243, 236, 0.7);
+}
+
+.tuong-goi-y {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: rgba(247, 243, 236, 0.7);
+  letter-spacing: 0.05em;
+}
+
+.tuong-goi-y i {
+  width: 1px;
+  height: 18px;
+  background: rgba(247, 243, 236, 0.6);
+  transform-origin: top;
+  animation: nhipCuon 1.9s ease-in-out infinite;
+}
+
+@keyframes nhipCuon {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+// ===== Khoảnh khắc — ảnh lớn + câu nói thương hiệu, nối tiếp mượt từ wall =====
+.khoanh-khac {
+  position: relative;
+  min-height: min(90vh, 760px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--mau-chu);
+}
+
+.khoanh-khac-anh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.khoanh-khac-phu {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 23, 18, 0.98) 0%,
+    rgba(26, 23, 18, 0.32) 22%,
+    rgba(26, 23, 18, 0.32) 78%,
+    rgba(26, 23, 18, 0.9) 100%
+  );
+}
+
+.khoanh-khac-noi-dung {
+  position: relative;
+  text-align: center;
+}
+
+.khoanh-khac-cau {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 4.2vw, 2.6rem);
+  line-height: 1.35;
+  color: var(--mau-nen);
+  max-width: 20ch;
+  margin: 0 auto;
+}
+
+// ===== Giới thiệu ngắn =====
+.gioi-thieu-ngan h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 400;
+  max-width: 22ch;
+  margin-bottom: 16px;
+}
+
+// ===== Dịch vụ nổi bật =====
+.dich-vu-noi-bat h2,
+.thu-vien-noi-bat h2,
+.quy-trinh h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 400;
+}
+
+.luoi-dv-nb {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px 24px;
+  margin-top: 24px;
+}
+
+.the-dv-nb {
+  padding: 20px 0;
+  border-top: 1px solid var(--mau-vien);
+}
+
+.the-dv-nb h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+// ===== Thư viện nổi bật =====
+.sec-dau {
+  margin-bottom: 20px;
+}
+
+.luoi-tv-nb {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(190px, 1fr);
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x proximity;
+}
+
+.the-tv-nb {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  scroll-snap-align: start;
+}
+
+.the-tv-nb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--do-doc-vb);
+}
+
+.the-tv-nb:hover img {
+  transform: scale(1.05);
+}
+
+// ===== Quy trình =====
+.luoi-buoc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.the-buoc .so-buoc {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--mau-nhan-2);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.the-buoc h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
