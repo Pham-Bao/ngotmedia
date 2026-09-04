@@ -24,8 +24,7 @@ export class ThanhDieuHuong {
     { nhan: 'Trang chủ', duongDan: '/' },
     { nhan: 'Thư viện', duongDan: '/thu-vien' },
     { nhan: 'Dịch vụ', duongDan: '/dich-vu' },
-    { nhan: 'Giới thiệu', duongDan: '/gioi-thieu' },
-    { nhan: 'Liên hệ', duongDan: '/lien-he' },
+    { nhan: 'Chọn trang phục', duongDan: '/gioi-thieu' },
   ];
 
   protected readonly menuDangMo = signal(false);

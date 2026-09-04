@@ -1,0 +1,219 @@
+<section class="wrap section dl-dau">
+  <p class="eyebrow">Đặt lịch chụp</p>
+  <h1>Chốt lựa chọn, <span class="serif-i">giữ lịch cho lớp bạn.</span></h1>
+  <p class="lead">
+    Xem lại ảnh đã thích và trang phục đã chọn, điền thông tin lớp, rồi kiểm tra lại trước khi gửi
+    — Ngọt Media sẽ phản hồi lại sớm nhất.
+  </p>
+</section>
+
+@if (!daGui()) {
+  <div class="wrap dl-thanh-buoc">
+    @for (buoc of cacBuoc; track buoc.so) {
+      <button
+        type="button"
+        class="dl-nut-buoc"
+        [class.dang-o]="buocHienTai() === buoc.so"
+        [class.da-qua]="buocHienTai() > buoc.so"
+        [disabled]="buoc.so > buocToiDa()"
+        (click)="diToiBuoc(buoc.so)"
+      >
+        <span class="dl-so-buoc">{{ buocHienTai() > buoc.so ? '✓' : buoc.so }}</span>
+        <span class="dl-nhan-buoc">{{ buoc.nhan }}</span>
+      </button>
+    }
+  </div>
+
+  <section class="wrap section dl-khu">
+    @switch (buocHienTai()) {
+      @case (1) {
+        <p class="eyebrow">Bước 1 — Ảnh bạn đã thích ({{ anhDaLuu().length }})</p>
+
+        @if (anhDaLuu().length === 0) {
+          <div class="dl-trong">
+            <span>Bạn chưa lưu ảnh nào.</span>
+            <a class="more" routerLink="/thu-vien">Xem thư viện ảnh →</a>
+          </div>
+        } @else {
+          <div class="dl-luoi-anh">
+            @for (anh of anhDaLuu(); track anh.id) {
+              <div class="dl-the-anh">
+                <img [src]="anh.file" [alt]="nhanNhom[anh.nhom]" loading="lazy" />
+                <button type="button" (click)="boAnh(anh.id)" aria-label="Bỏ ảnh này">✕</button>
+              </div>
+            }
+          </div>
+          <a class="more" routerLink="/thu-vien">Chọn thêm ảnh →</a>
+        }
+      }
+
+      @case (2) {
+        <p class="eyebrow">Bước 2 — Trang phục đã chọn ({{ trangPhucDaChon().length }})</p>
+
+        @if (trangPhucDaChon().length === 0) {
+          <div class="dl-trong">
+            <span>Bạn chưa chọn trang phục nào.</span>
+            <a class="more" routerLink="/gioi-thieu">Chọn trang phục →</a>
+          </div>
+        } @else {
+          <div class="tp-chip-list">
+            @for (bo of trangPhucDaChon(); track bo.id) {
+              <span class="tp-chip">
+                {{ bo.ten }}
+                <button
+                  type="button"
+                  (click)="boTrangPhuc(bo.id)"
+                  [attr.aria-label]="'Bỏ ' + bo.ten"
+                >
+                  ✕
+                </button>
+              </span>
+            }
+          </div>
+          <a class="more" routerLink="/gioi-thieu">Chọn lại trang phục →</a>
+        }
+      }
+
+      @case (3) {
+        <p class="eyebrow">Bước 3 — Thông tin lớp</p>
+
+        <form class="dl-form">
+          <label class="dl-truong">
+            <span>Trường <b class="dl-bat-buoc">*</b></span>
+            <input type="text" name="truong" [(ngModel)]="thongTin.truong" placeholder="THPT..." />
+            @if (loiTruong()) {
+              <span class="dl-loi">Vui lòng nhập tên trường.</span>
+            }
+          </label>
+
+          <label class="dl-truong">
+            <span>Lớp <b class="dl-bat-buoc">*</b></span>
+            <input type="text" name="lop" [(ngModel)]="thongTin.lop" placeholder="12A1" />
+            @if (loiLop()) {
+              <span class="dl-loi">Vui lòng nhập tên lớp.</span>
+            }
+          </label>
+
+          <label class="dl-truong">
+            <span>Sĩ số dự kiến</span>
+            <input
+              type="text"
+              inputmode="numeric"
+              name="siSo"
+              [(ngModel)]="thongTin.siSo"
+              placeholder="Khoảng 40 bạn"
+            />
+          </label>
+
+          <label class="dl-truong">
+            <span>Ngày chụp mong muốn</span>
+            <input type="date" name="ngayChup" [(ngModel)]="thongTin.ngayChup" />
+          </label>
+
+          <label class="dl-truong">
+            <span>Họ tên người đại diện <b class="dl-bat-buoc">*</b></span>
+            <input
+              type="text"
+              name="hoTen"
+              [(ngModel)]="thongTin.hoTen"
+              placeholder="Nguyễn Văn A"
+            />
+            @if (loiHoTen()) {
+              <span class="dl-loi">Vui lòng nhập họ tên.</span>
+            }
+          </label>
+
+          <label class="dl-truong">
+            <span>Số điện thoại / Zalo <b class="dl-bat-buoc">*</b></span>
+            <input
+              type="tel"
+              name="soDienThoai"
+              [(ngModel)]="thongTin.soDienThoai"
+              placeholder="09xx xxx xxx"
+            />
+            @if (loiSoDienThoai()) {
+              <span class="dl-loi">Vui lòng nhập số điện thoại hoặc Zalo.</span>
+            }
+          </label>
+
+          <label class="dl-truong dl-truong-rong">
+            <span>Ghi chú thêm</span>
+            <textarea
+              name="ghiChu"
+              rows="3"
+              [(ngModel)]="thongTin.ghiChu"
+              placeholder="Concept mong muốn, địa điểm..."
+            ></textarea>
+          </label>
+        </form>
+      }
+
+      @case (4) {
+        <p class="eyebrow">Bước 4 — Kiểm tra lại</p>
+
+        <div class="dl-tomtat">
+          <div>
+            <b>Trường — Lớp</b>
+            <span class="muted small">{{ thongTin.truong }} — {{ thongTin.lop }}</span>
+          </div>
+          @if (thongTin.siSo) {
+            <div>
+              <b>Sĩ số dự kiến</b>
+              <span class="muted small">{{ thongTin.siSo }}</span>
+            </div>
+          }
+          <div>
+            <b>Người đại diện</b>
+            <span class="muted small">{{ thongTin.hoTen }} — {{ thongTin.soDienThoai }}</span>
+          </div>
+          @if (thongTin.ngayChup) {
+            <div>
+              <b>Ngày chụp mong muốn</b>
+              <span class="muted small">{{ thongTin.ngayChup }}</span>
+            </div>
+          }
+          @if (thongTin.ghiChu) {
+            <div>
+              <b>Ghi chú</b>
+              <span class="muted small">{{ thongTin.ghiChu }}</span>
+            </div>
+          }
+          <div>
+            <b>Ảnh đã thích</b>
+            <span class="muted small">{{ anhDaLuu().length }} ảnh</span>
+          </div>
+          <div>
+            <b>Trang phục đã chọn</b>
+            <span class="muted small">{{ tenTrangPhucDaChon() || 'Chưa chọn' }}</span>
+          </div>
+        </div>
+      }
+    }
+
+    <div class="dl-dieu-huong">
+      @if (buocHienTai() > 1) {
+        <button type="button" class="btn btn-ghost" (click)="quayLai()">← Quay lại</button>
+      }
+      @if (buocHienTai() < 4) {
+        <button type="button" class="btn btn-primary" (click)="tiepTuc()">Tiếp tục →</button>
+      } @else {
+        <button type="button" class="btn btn-primary" (click)="guiYeuCau()">
+          Gửi yêu cầu giữ lịch
+        </button>
+      }
+    </div>
+  </section>
+} @else {
+  <section class="wrap section dl-khu">
+    <div class="dl-xacnhan">
+      <p class="eyebrow">Đã ghi nhận yêu cầu</p>
+      <h2>Cảm ơn {{ thongTin.hoTen }}!</h2>
+      <p class="lead">
+        Thông tin lớp {{ thongTin.lop }} — {{ thongTin.truong }} đã sẵn sàng, Ngọt Media sẽ liên hệ
+        lại qua {{ thongTin.soDienThoai }} sớm nhất.
+      </p>
+
+      <button type="button" class="btn btn-ghost" (click)="suaLai()">Sửa lại thông tin</button>
+    </div>
+  </section>
+}

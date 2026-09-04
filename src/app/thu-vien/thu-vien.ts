@@ -10,28 +10,11 @@ import {
   effect,
   signal,
 } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NhomAnh, danhSachAnh, nhanNhom } from '../du-lieu-anh';
+import { KHOA_ANH_DA_LUU, docTapHopDaLuu, ghiTapHopDaLuu } from '../luu-tru';
 
 type BoLoc = 'tat-ca' | 'da-luu' | NhomAnh;
-
-const KHOA_LUU_TRU = 'ngot-media-anh-da-luu';
-
-function docAnhDaLuu(): Set<string> {
-  try {
-    const raw = localStorage.getItem(KHOA_LUU_TRU);
-    return raw ? new Set(JSON.parse(raw)) : new Set();
-  } catch {
-    return new Set();
-  }
-}
-
-function ghiAnhDaLuu(ds: Set<string>): void {
-  try {
-    localStorage.setItem(KHOA_LUU_TRU, JSON.stringify([...ds]));
-  } catch {
-    // Trình duyệt chặn localStorage (chế độ ẩn danh...) — bỏ qua, không chặn trải nghiệm.
-  }
-}
 
 // Đồng bộ ảnh đang xem lên URL (?anh=id) để có thể copy/chia sẻ link thẳng tới 1 ảnh.
 function capNhatUrlAnh(id: string | null): void {
@@ -45,7 +28,7 @@ function capNhatUrlAnh(id: string | null): void {
 }
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-thu-vien',
   styleUrl: './thu-vien.scss',
   templateUrl: './thu-vien.html',
@@ -56,7 +39,7 @@ export class ThuVien implements AfterViewInit, OnDestroy {
   protected readonly danhSachNhom = Object.keys(nhanNhom) as NhomAnh[];
 
   protected readonly boLocDangChon = signal<BoLoc>('tat-ca');
-  protected readonly anhDaLuuIds = signal<Set<string>>(docAnhDaLuu());
+  protected readonly anhDaLuuIds = signal<Set<string>>(docTapHopDaLuu(KHOA_ANH_DA_LUU));
   protected readonly soAnhDaLuu = computed(() => this.anhDaLuuIds().size);
 
   protected readonly anhDaLoc = computed(() => {
@@ -98,7 +81,7 @@ export class ThuVien implements AfterViewInit, OnDestroy {
       document.body.style.overflow = this.chiSoDangXem() !== null ? 'hidden' : '';
     });
 
-    effect(() => ghiAnhDaLuu(this.anhDaLuuIds()));
+    effect(() => ghiTapHopDaLuu(KHOA_ANH_DA_LUU, this.anhDaLuuIds()));
 
     effect(() => {
       const anh = this.anhXemHienTai();

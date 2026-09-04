@@ -1,0 +1,216 @@
+.tp-dau h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  max-width: 22ch;
+  margin-bottom: 18px;
+}
+
+.tp-luoi-khu {
+  padding-top: 0;
+}
+
+.luoi-trang-phuc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.the-trang-phuc {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+.tp-anh-boc {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--mau-vien);
+  aspect-ratio: 3 / 4;
+  border: 2px solid transparent;
+  transition: border-color 0.22s var(--do-doc-vb);
+}
+
+.the-trang-phuc.dang-chon .tp-anh-boc {
+  border-color: var(--mau-nhan);
+}
+
+.tp-anh-boc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s var(--do-doc-vb);
+}
+
+.the-trang-phuc:hover .tp-anh-boc img {
+  transform: scale(1.03);
+}
+
+.tp-dau-chon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(247, 243, 236, 0.85);
+  color: transparent;
+  border: 1.5px solid rgba(26, 23, 18, 0.25);
+  transition:
+    background-color 0.2s var(--do-doc-vb),
+    color 0.2s var(--do-doc-vb),
+    border-color 0.2s var(--do-doc-vb);
+}
+
+.tp-dau-chon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.the-trang-phuc.dang-chon .tp-dau-chon {
+  background: var(--mau-nhan);
+  color: var(--mau-nen);
+  border-color: var(--mau-nhan);
+}
+
+.tp-thongtin {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tp-thongtin b {
+  font-size: 1rem;
+}
+
+.tp-danhsach {
+  padding-top: 0;
+}
+
+.tp-trong {
+  border: 1px dashed var(--mau-vien-3);
+  border-radius: 14px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.tp-trong b {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.tp-trong span {
+  font-size: 0.9rem;
+  color: var(--mau-chu-3);
+  display: block;
+  margin-top: 8px;
+}
+
+.tp-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--mau-vien);
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.tp-chip button {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--mau-vien);
+  color: var(--mau-chu-2);
+  font-size: 0.7rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tp-chip button:hover {
+  background: var(--mau-nhan-2);
+  color: var(--mau-chu);
+}
+
+.tp-hanh-dong {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tp-concept {
+  padding-top: 0;
+}
+
+.tp-concept-lead {
+  margin-top: -4px;
+  margin-bottom: 20px;
+}
+
+.tp-luoi-concept {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.tp-the-concept {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid var(--mau-vien);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.tp-the-concept img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex: none;
+}
+
+.tp-the-concept div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tp-the-concept b {
+  font-size: 0.95rem;
+}
+
+.tp-cta-nut {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}

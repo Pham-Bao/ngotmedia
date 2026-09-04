@@ -1,0 +1,95 @@
+<section class="wrap section tp-dau reveal" #revealEl>
+  <p class="eyebrow">Chọn trang phục</p>
+  <h1>Mặc gì — <span class="serif-i">lớp bạn toàn quyền.</span></h1>
+  <p class="lead">
+    Tất cả trang phục dưới đây đã kèm trong gói, không phát sinh thêm chi phí. Lớp chọn bộ yêu
+    thích, xem lại danh sách rồi gửi cho studio — số lượng từng size sẽ chốt muộn nhất 1 tuần trước
+    ngày chụp.
+  </p>
+</section>
+
+<section class="wrap section tp-luoi-khu">
+  <p class="eyebrow reveal" #revealEl>Bước 1 — Chọn trang phục</p>
+  <div class="luoi-trang-phuc">
+    @for (bo of danhSachTrangPhuc; track bo.id) {
+      <button
+        type="button"
+        class="the-trang-phuc reveal"
+        #revealEl
+        [class.dang-chon]="laDaChon(bo.id)"
+        (click)="chuyenChon(bo.id)"
+        [attr.aria-pressed]="laDaChon(bo.id)"
+      >
+        <span class="tp-anh-boc">
+          <img [src]="bo.file" [alt]="bo.ten" loading="lazy" />
+          <span class="tp-dau-chon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </span>
+        <span class="tp-thongtin">
+          <b>{{ bo.ten }}</b>
+          <span class="muted small">{{ bo.moTa }}</span>
+        </span>
+      </button>
+    }
+  </div>
+</section>
+
+<section class="wrap section tp-danhsach reveal" #revealEl>
+  <p class="eyebrow">Bước 2 — Xem lại lựa chọn ({{ soLuongDaChon() }})</p>
+
+  @if (soLuongDaChon() === 0) {
+    <div class="tp-trong">
+      <b>Chưa chọn trang phục nào</b>
+      <span>Chạm vào các bộ trang phục ở trên để thêm vào danh sách của bạn.</span>
+    </div>
+  } @else {
+    <div class="tp-chip-list">
+      @for (bo of boDaChon(); track bo.id) {
+        <span class="tp-chip">
+          {{ bo.ten }}
+          <button type="button" (click)="boChon(bo.id)" [attr.aria-label]="'Bỏ ' + bo.ten">
+            ✕
+          </button>
+        </span>
+      }
+    </div>
+
+    <div class="tp-hanh-dong">
+      <button type="button" class="btn btn-primary" (click)="saoChepDanhSach()">
+        {{ daSaoChep() ? 'Đã sao chép ✓' : 'Sao chép danh sách' }}
+      </button>
+      <span class="small muted">Sao chép rồi dán gửi cho studio qua Zalo.</span>
+    </div>
+  }
+</section>
+
+<section class="wrap section tp-concept reveal" #revealEl>
+  <p class="eyebrow">Gợi ý phối theo concept</p>
+  <p class="lead tp-concept-lead">
+    Mỗi bộ trang phục hợp với một concept chụp riêng — tham khảo trước khi chốt để cả lớp lên hình
+    đồng bộ.
+  </p>
+  <div class="tp-luoi-concept">
+    @for (bo of danhSachTrangPhuc; track bo.id) {
+      <div class="tp-the-concept">
+        <img [src]="bo.file" [alt]="bo.ten" loading="lazy" />
+        <div>
+          <b>{{ bo.ten }}</b>
+          <span class="muted small">{{ bo.moTa }}</span>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="wrap section cta-cuoi reveal" #revealEl>
+  <h2>Đã chọn xong trang phục?</h2>
+  <p class="lead">Sao chép danh sách và gửi cho Ngọt Media để lên lịch thử đồ nhé.</p>
+  <div class="tp-cta-nut">
+    <a class="btn btn-primary" routerLink="/dat-lich">Đặt lịch cho lớp</a>
+    <a class="btn btn-ghost" href="#">Xem cẩm nang chuẩn bị</a>
+  </div>
+</section>

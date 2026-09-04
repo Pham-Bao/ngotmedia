@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 interface GoiDichVu {
   ten: string;
@@ -13,7 +14,7 @@ interface CauHoiDap {
 }
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-dich-vu',
   styleUrl: './dich-vu.scss',
   templateUrl: './dich-vu.html',

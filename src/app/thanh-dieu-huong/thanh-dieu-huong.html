@@ -17,7 +17,7 @@
           {{ muc.nhan }}
         </a>
       }
-      <a class="btn btn-primary btn-sm" href="#">Đặt lịch</a>
+      <a class="btn btn-primary btn-sm" routerLink="/dat-lich">Đặt lịch</a>
     </nav>
 
     <button type="button" class="nut-menu" (click)="moMenu()" aria-label="Mở menu">
@@ -44,5 +44,5 @@
       }}</a>
     }
   </nav>
-  <a class="btn btn-primary" href="#" (click)="dongMenu()">Đặt lịch chụp</a>
+  <a class="btn btn-primary" routerLink="/dat-lich" (click)="dongMenu()">Đặt lịch chụp</a>
 </div>
