@@ -1,6 +1,7 @@
 import { Component, computed, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import emailjs from '@emailjs/browser';
 import { AnhBoSuuTap, danhSachAnh, nhanNhom } from '../du-lieu-anh';
 import { BoTrangPhuc, danhSachTrangPhuc } from '../du-lieu-trang-phuc';
 import {
@@ -9,6 +10,10 @@ import {
   docTapHopDaLuu,
   ghiTapHopDaLuu,
 } from '../luu-tru';
+
+const EMAILJS_SERVICE_ID = 'ic2qt5pc';
+const EMAILJS_TEMPLATE_ID = 'template_l0vhyoh';
+const EMAILJS_PUBLIC_KEY = 'lufBzYcP5m-ndBecC';
 
 type Buoc = 1 | 2 | 3 | 4;
 
@@ -73,6 +78,8 @@ export class DatLich {
   protected readonly buocHienTai = signal<Buoc>(1);
   protected readonly buocToiDa = signal<Buoc>(1);
   protected readonly daCoGangXacNhanBuoc3 = signal(false);
+  protected readonly dangGui = signal(false);
+  protected readonly loiGui = signal(false);
   protected readonly daGui = signal(false);
 
   protected readonly loiTruong = computed(
@@ -134,8 +141,33 @@ export class DatLich {
     this.buocToiDa.update((toiDa) => Math.max(toiDa, buocKe) as Buoc);
   }
 
-  protected guiYeuCau(): void {
-    this.daGui.set(true);
+  protected async guiYeuCau(): Promise<void> {
+    this.dangGui.set(true);
+    this.loiGui.set(false);
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          truong: this.thongTin.truong,
+          lop: this.thongTin.lop,
+          si_so: this.thongTin.siSo || 'Chưa rõ',
+          ngay_chup: this.thongTin.ngayChup || 'Chưa rõ',
+          ho_ten: this.thongTin.hoTen,
+          so_dien_thoai: this.thongTin.soDienThoai,
+          trang_phuc: this.tenTrangPhucDaChon() || 'Chưa chọn',
+          so_anh: this.anhDaLuu().length,
+          ghi_chu: this.thongTin.ghiChu || 'Không có',
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      );
+      this.daGui.set(true);
+    } catch {
+      this.loiGui.set(true);
+    } finally {
+      this.dangGui.set(false);
+    }
   }
 
   protected suaLai(): void {

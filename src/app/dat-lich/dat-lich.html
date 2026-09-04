@@ -197,20 +197,32 @@
       @if (buocHienTai() < 4) {
         <button type="button" class="btn btn-primary" (click)="tiepTuc()">Tiếp tục →</button>
       } @else {
-        <button type="button" class="btn btn-primary" (click)="guiYeuCau()">
-          Gửi yêu cầu giữ lịch
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="dangGui()"
+          (click)="guiYeuCau()"
+        >
+          {{ dangGui() ? 'Đang gửi...' : 'Gửi yêu cầu giữ lịch' }}
         </button>
       }
     </div>
+
+    @if (loiGui()) {
+      <p class="dl-loi dl-loi-gui">
+        Gửi thất bại, có thể do mạng chập chờn. Vui lòng thử lại hoặc nhắn Zalo trực tiếp cho
+        studio.
+      </p>
+    }
   </section>
 } @else {
   <section class="wrap section dl-khu">
     <div class="dl-xacnhan">
-      <p class="eyebrow">Đã ghi nhận yêu cầu</p>
+      <p class="eyebrow">Đã gửi yêu cầu thành công</p>
       <h2>Cảm ơn {{ thongTin.hoTen }}!</h2>
       <p class="lead">
-        Thông tin lớp {{ thongTin.lop }} — {{ thongTin.truong }} đã sẵn sàng, Ngọt Media sẽ liên hệ
-        lại qua {{ thongTin.soDienThoai }} sớm nhất.
+        Thông tin lớp {{ thongTin.lop }} — {{ thongTin.truong }} đã được gửi tới Ngọt Media, studio
+        sẽ liên hệ lại qua {{ thongTin.soDienThoai }} sớm nhất.
       </p>
 
       <button type="button" class="btn btn-ghost" (click)="suaLai()">Sửa lại thông tin</button>
