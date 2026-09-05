@@ -43,12 +43,14 @@
 }
 
 // Component dựng sẵn 5 cột — CSS chỉ hiện đúng số cột phù hợp màn hình
+.tuong-cot:nth-child(3),
 .tuong-cot:nth-child(4),
 .tuong-cot:nth-child(5) {
   display: none;
 }
 
 @media (min-width: 720px) {
+  .tuong-cot:nth-child(3),
   .tuong-cot:nth-child(4) {
     display: block;
   }
