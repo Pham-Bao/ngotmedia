@@ -46,14 +46,16 @@
 }
 
 .cot-lien-ket a,
-.cot-mang-xa-hoi a {
+.cot-mang-xa-hoi a,
+.cot-lien-he a {
   text-decoration: none;
   color: var(--mau-chu-3);
   font-size: 0.9rem;
 }
 
 .cot-lien-ket a:hover,
-.cot-mang-xa-hoi a:hover {
+.cot-mang-xa-hoi a:hover,
+.cot-lien-he a:hover {
   color: var(--mau-nhan);
 }
 

@@ -22,21 +22,20 @@
 
     <div class="cot-lien-he">
       <p class="eyebrow">Liên hệ</p>
-      <p class="small">123 Đường ABC, Quận 1, TP.HCM</p>
-      <p class="small">0900 000 000</p>
-      <p class="small">hello@ngotmedia.vn</p>
+      <p class="small">30 Vạn Bảo, Liễu Giai, Ba Đình, Hà Nội</p>
+      <p class="small"><a href="tel:0912513288">0912 513 288</a> (Hotline/Zalo)</p>
+      <p class="small"><a href="mailto:Ngottmedia@gmail.com">Ngottmedia@gmail.com</a></p>
     </div>
 
     <div class="cot-mang-xa-hoi">
       <p class="eyebrow">Theo dõi</p>
       @for (muc of mangXaHoi; track muc.nhan) {
-        <a [href]="muc.duongDan">{{ muc.nhan }}</a>
+        <a [href]="muc.duongDan" target="_blank" rel="noopener">{{ muc.nhan }}</a>
       }
     </div>
   </div>
 
   <div class="wrap dong-cuoi">
     <p class="small muted">© {{ namHienTai }} Ngọt Media. Đã đăng ký bản quyền.</p>
-    <p class="small muted">* Thông tin liên hệ ở trên là dữ liệu minh hoạ.</p>
   </div>
 </footer>

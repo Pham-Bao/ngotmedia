@@ -23,8 +23,12 @@ export class ChanTrang {
   ];
 
   protected readonly mangXaHoi: MucChanTrang[] = [
-    { nhan: 'Facebook', duongDan: '#' },
-    { nhan: 'Instagram', duongDan: '#' },
-    { nhan: 'Zalo', duongDan: '#' },
+    {
+      nhan: 'Facebook',
+      duongDan:
+        'https://www.facebook.com/p/Ng%E1%BB%8Dt-Media-Ch%E1%BB%A5p-%E1%BA%A2nh-K%E1%BB%B7-Y%E1%BA%BFu-100092593457089/',
+    },
+    { nhan: 'TikTok', duongDan: 'https://www.tiktok.com/@ngotmedia' },
+    { nhan: 'Zalo', duongDan: 'https://zalo.me/0912513288' },
   ];
 }
