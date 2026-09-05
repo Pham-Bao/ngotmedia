@@ -11,9 +11,9 @@ import {
   ghiTapHopDaLuu,
 } from '../luu-tru';
 
-const EMAILJS_SERVICE_ID = 'ic2qt5pc';
-const EMAILJS_TEMPLATE_ID = 'template_l0vhyoh';
-const EMAILJS_PUBLIC_KEY = 'lufBzYcP5m-ndBecC';
+const EMAILJS_SERVICE_ID = 'service_jnrwo6r';
+const EMAILJS_TEMPLATE_ID = 'template_pnkyz9m';
+const EMAILJS_PUBLIC_KEY = 'EB18jDATYi_vKrG9S';
 
 type Buoc = 1 | 2 | 3 | 4;
 
