@@ -12,16 +12,6 @@
     <button type="button" class="tv-tab" [class.dang-chon]="boLocDangChon() === 'tat-ca'" (click)="chonBoLoc('tat-ca')">
       Tất cả <span class="tv-so">{{ tongSoAnh }}</span>
     </button>
-    @for (nhom of danhSachNhom; track nhom) {
-      <button
-        type="button"
-        class="tv-tab"
-        [class.dang-chon]="boLocDangChon() === nhom"
-        (click)="chonBoLoc(nhom)"
-      >
-        {{ nhanNhom[nhom] }}
-      </button>
-    }
     <button
       type="button"
       class="tv-tab tv-tab-luu"
@@ -35,6 +25,16 @@
       </svg>
       Đã lưu <span class="tv-so">{{ soAnhDaLuu() }}</span>
     </button>
+    @for (nhom of danhSachNhom; track nhom) {
+      <button
+        type="button"
+        class="tv-tab"
+        [class.dang-chon]="boLocDangChon() === nhom"
+        (click)="chonBoLoc(nhom)"
+      >
+        {{ nhanNhom[nhom] }}
+      </button>
+    }
   </div>
 </div>
 

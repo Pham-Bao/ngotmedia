@@ -28,10 +28,14 @@
     @switch (buocHienTai()) {
       @case (1) {
         <p class="eyebrow">Bước 1 — Ảnh bạn đã thích ({{ anhDaLuu().length }})</p>
+        <p class="small muted dl-ghi-chu-buoc">
+          Không bắt buộc — nếu chưa ưng ý ảnh nào, bạn cứ bấm "Tiếp tục" để làm bước sau, quay lại
+          chọn ảnh sau cũng được.
+        </p>
 
         @if (anhDaLuu().length === 0) {
           <div class="dl-trong">
-            <span>Bạn chưa lưu ảnh nào.</span>
+            <span>Bạn chưa lưu ảnh nào — không sao, có thể bỏ qua bước này.</span>
             <a class="more" routerLink="/thu-vien">Xem thư viện ảnh →</a>
           </div>
         } @else {
@@ -49,10 +53,14 @@
 
       @case (2) {
         <p class="eyebrow">Bước 2 — Trang phục đã chọn ({{ trangPhucDaChon().length }})</p>
+        <p class="small muted dl-ghi-chu-buoc">
+          Không bắt buộc — chưa chốt trang phục cũng cứ "Tiếp tục", lớp có thể chọn sau khi trao
+          đổi thêm với studio.
+        </p>
 
         @if (trangPhucDaChon().length === 0) {
           <div class="dl-trong">
-            <span>Bạn chưa chọn trang phục nào.</span>
+            <span>Bạn chưa chọn trang phục nào — không sao, có thể bỏ qua bước này.</span>
             <a class="more" routerLink="/gioi-thieu">Chọn trang phục →</a>
           </div>
         } @else {
