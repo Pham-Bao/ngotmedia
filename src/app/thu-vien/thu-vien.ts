@@ -5,6 +5,7 @@ import {
   HostListener,
   OnDestroy,
   QueryList,
+  ViewChild,
   ViewChildren,
   computed,
   effect,
@@ -74,6 +75,8 @@ export class ThuVien implements AfterViewInit, OnDestroy {
   protected readonly daSaoChepLienKet = signal(false);
 
   @ViewChildren('revealEl') private cacPhanTuReveal!: QueryList<ElementRef<HTMLElement>>;
+  @ViewChild('thanhLoc') private thanhLocRef!: ElementRef<HTMLElement>;
+  @ViewChild('luoiKhu') private luoiKhuRef!: ElementRef<HTMLElement>;
   private quanSatReveal?: IntersectionObserver;
 
   constructor() {
@@ -86,6 +89,18 @@ export class ThuVien implements AfterViewInit, OnDestroy {
     effect(() => {
       const anh = this.anhXemHienTai();
       capNhatUrlAnh(anh ? anh.id : null);
+    });
+
+    // Tải trước ảnh trước/sau khi đang xem chi tiết để bấm/vuốt chuyển ảnh không phải chờ.
+    effect(() => {
+      const chiSo = this.chiSoDangXem();
+      const ds = this.anhDaLoc();
+      if (chiSo === null || ds.length < 2) {
+        return;
+      }
+      for (const buoc of [1, -1]) {
+        new Image().src = ds[(chiSo + buoc + ds.length) % ds.length].vua;
+      }
     });
 
     this.moAnhTuUrl();
@@ -115,6 +130,22 @@ export class ThuVien implements AfterViewInit, OnDestroy {
 
   protected chonBoLoc(boLoc: BoLoc): void {
     this.boLocDangChon.set(boLoc);
+    this.cuonVeDauLuoi();
+  }
+
+  // Đổi tab khi đang cuộn giữa lưới ảnh → đưa người dùng về ảnh đầu tiên của tab mới,
+  // ngay dưới thanh lọc đang dính. Nếu còn ở phía trên lưới thì giữ nguyên vị trí.
+  private cuonVeDauLuoi(): void {
+    const thanh = this.thanhLocRef.nativeElement;
+    const dinhThanh = parseFloat(getComputedStyle(thanh).top) || 0;
+    const viTriLuoi =
+      this.luoiKhuRef.nativeElement.getBoundingClientRect().top +
+      window.scrollY -
+      dinhThanh -
+      thanh.offsetHeight;
+    if (window.scrollY > viTriLuoi) {
+      window.scrollTo({ top: viTriLuoi, behavior: 'instant' });
+    }
   }
 
   protected laDaLuu(id: string): boolean {

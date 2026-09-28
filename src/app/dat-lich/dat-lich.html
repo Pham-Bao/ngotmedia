@@ -42,7 +42,7 @@
           <div class="dl-luoi-anh">
             @for (anh of anhDaLuu(); track anh.id) {
               <div class="dl-the-anh">
-                <img [src]="anh.file" [alt]="nhanNhom[anh.nhom]" loading="lazy" />
+                <img [src]="anh.nho" [alt]="nhanNhom[anh.nhom]" loading="lazy" decoding="async" />
                 <button type="button" (click)="boAnh(anh.id)" aria-label="Bỏ ảnh này">✕</button>
               </div>
             }

@@ -17,10 +17,23 @@ interface DichVuNoiBat {
 
 const SO_COT_TUONG = 5;
 
+// Tường ảnh và dải ảnh nổi bật đều cắt khung dọc 3:4 — ưu tiên ảnh dọc để không
+// bị cắt mất nhiều, rồi lấy rải đều qua cả danh sách để có đủ các nhóm.
+const anhDoc = danhSachAnh.filter((anh) => anh.cao > anh.rong);
+const nguonAnhDoc = anhDoc.length >= 10 ? anhDoc : danhSachAnh;
+
+function layRaiDeu<T>(ds: T[], soLuong: number): T[] {
+  if (ds.length <= soLuong) {
+    return ds;
+  }
+  const buoc = ds.length / soLuong;
+  return Array.from({ length: soLuong }, (_, i) => ds[Math.floor(i * buoc)]);
+}
+
 function chiaCotTuongAnh(): string[][] {
-  const anhChoTuong = danhSachAnh.filter((_, i) => i % 5 === 0).slice(0, 30);
+  const anhChoTuong = layRaiDeu(nguonAnhDoc, 30);
   const cot: string[][] = Array.from({ length: SO_COT_TUONG }, () => []);
-  anhChoTuong.forEach((anh, i) => cot[i % SO_COT_TUONG].push(anh.file));
+  anhChoTuong.forEach((anh, i) => cot[i % SO_COT_TUONG].push(anh.nho));
   return cot;
 }
 
@@ -44,7 +57,7 @@ export class TrangChu implements AfterViewInit, OnDestroy {
   protected readonly cotTuongAnh = chiaCotTuongAnh();
   protected readonly tongSoAnh = danhSachAnh.length;
 
-  protected readonly anhNoiBat = danhSachAnh.filter((_, i) => i % 19 === 3).slice(0, 8);
+  protected readonly anhNoiBat = layRaiDeu(nguonAnhDoc.slice(3), 8);
 
   protected readonly dichVuNoiBat: DichVuNoiBat[] = [
     { ten: 'Chân dung cá nhân', moTa: 'Tôn dáng và cá tính riêng của bạn.' },

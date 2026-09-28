@@ -7,7 +7,7 @@
   </p>
 </section>
 
-<div class="tv-thanh">
+<div class="tv-thanh" #thanhLoc>
   <div class="wrap-rong tv-tabs">
     <button type="button" class="tv-tab" [class.dang-chon]="boLocDangChon() === 'tat-ca'" (click)="chonBoLoc('tat-ca')">
       Tất cả <span class="tv-so">{{ tongSoAnh }}</span>
@@ -38,7 +38,7 @@
   </div>
 </div>
 
-<section class="wrap-rong section tv-luoi-khu">
+<section class="wrap-rong section tv-luoi-khu" #luoiKhu>
   @if (boLocDangChon() === 'da-luu' && anhDaLoc().length === 0) {
     <div class="tv-trong">
       <b>Chưa có ảnh nào được lưu</b>
@@ -47,9 +47,17 @@
   } @else {
     <div class="luoi-thu-vien">
       @for (anh of anhDaLoc(); track anh.id; let i = $index) {
-        <div class="the-anh-tv reveal" #revealEl>
+        <div class="the-anh-tv">
           <button type="button" class="tv-nut-xem" (click)="moAnh(i)">
-            <img [src]="anh.file" [alt]="nhanNhom[anh.nhom]" loading="lazy" />
+            <img
+              [src]="anh.nho"
+              [alt]="nhanNhom[anh.nhom]"
+              [width]="anh.rong"
+              [height]="anh.cao"
+              [style.aspect-ratio]="anh.rong + ' / ' + anh.cao"
+              loading="lazy"
+              decoding="async"
+            />
           </button>
           <button
             type="button"
@@ -83,7 +91,7 @@
 
       <div class="wrap-rong tv-chitiet-khung">
         <div class="tv-chitiet-anh">
-          <img [src]="anh.file" [alt]="nhanNhom[anh.nhom]" />
+          <img [src]="anh.vua" [alt]="nhanNhom[anh.nhom]" decoding="async" />
 
           <button type="button" class="tv-dieu-huong tv-truoc" (click)="chuyenAnh(-1)" aria-label="Ảnh trước">
             ‹
@@ -134,7 +142,7 @@
           <div class="tv-luoi-lienquan">
             @for (a of anhLienQuan(); track a.id) {
               <button type="button" class="tv-the-lienquan" (click)="moAnhTheoId(a.id)">
-                <img [src]="a.file" [alt]="nhanNhom[a.nhom]" loading="lazy" />
+                <img [src]="a.nho" [alt]="nhanNhom[a.nhom]" loading="lazy" decoding="async" />
               </button>
             }
           </div>
