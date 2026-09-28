@@ -230,577 +230,62 @@ export const danhSachAnh: AnhBoSuuTap[] = [
   },
   {
     "id": "couple-1",
-    "file": "/anh/couple/04-640.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-2",
-    "file": "/anh/couple/05-1600.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-3",
-    "file": "/anh/couple/07-1600.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-4",
-    "file": "/anh/couple/09-1600.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-5",
-    "file": "/anh/couple/10-640.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-6",
-    "file": "/anh/couple/14-640.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-7",
-    "file": "/anh/couple/17-1600.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-8",
-    "file": "/anh/couple/27-1600.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-9",
-    "file": "/anh/couple/42-640.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-10",
     "file": "/anh/couple/480673341_553384997757944_2166370223778121897_n.jpg",
     "nhom": "couple"
   },
   {
-    "id": "couple-11",
+    "id": "couple-2",
     "file": "/anh/couple/585882185_774368972326211_3902029118433079827_n.jpg",
     "nhom": "couple"
   },
   {
-    "id": "couple-12",
+    "id": "couple-3",
     "file": "/anh/couple/600908287_794968003599641_1975513174427742772_n.jpg",
     "nhom": "couple"
   },
   {
-    "id": "couple-13",
+    "id": "couple-4",
     "file": "/anh/couple/615816604_819480291148412_2780374954021513880_n.jpg",
     "nhom": "couple"
   },
   {
-    "id": "couple-14",
+    "id": "couple-5",
     "file": "/anh/couple/619717227_826504580445983_6788352981740524846_n.jpg",
     "nhom": "couple"
   },
   {
-    "id": "couple-15",
+    "id": "couple-6",
     "file": "/anh/couple/619989371_819480361148405_4759287234414368561_n.jpg",
     "nhom": "couple"
   },
   {
-    "id": "couple-16",
+    "id": "couple-7",
     "file": "/anh/couple/622295876_826504800445961_2782755199506542168_n.jpg",
     "nhom": "couple"
   },
   {
-    "id": "couple-17",
+    "id": "couple-8",
     "file": "/anh/couple/632144626_839652555797852_7759500507639746494_n.jpg",
     "nhom": "couple"
   },
   {
-    "id": "couple-18",
-    "file": "/anh/couple/td-26-1600.avif",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-19",
-    "file": "/anh/couple/tx-35-1600.avif",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-20",
-    "file": "/anh/couple/umt8ftblb-xm5y-640.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-21",
-    "file": "/anh/couple/umt8ftcky-rtlr-640.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "couple-22",
-    "file": "/anh/couple/umt8ftesx-lo9f-640.webp",
-    "nhom": "couple"
-  },
-  {
-    "id": "nhom-tap-the-1",
-    "file": "/anh/nhom-tap-the/02-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-2",
-    "file": "/anh/nhom-tap-the/03-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-3",
-    "file": "/anh/nhom-tap-the/04-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-4",
-    "file": "/anh/nhom-tap-the/05-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-5",
-    "file": "/anh/nhom-tap-the/06-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-6",
-    "file": "/anh/nhom-tap-the/07-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-7",
-    "file": "/anh/nhom-tap-the/08-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-8",
-    "file": "/anh/nhom-tap-the/09-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-9",
-    "file": "/anh/nhom-tap-the/11-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-10",
-    "file": "/anh/nhom-tap-the/12-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-11",
-    "file": "/anh/nhom-tap-the/14-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-12",
-    "file": "/anh/nhom-tap-the/15-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-13",
-    "file": "/anh/nhom-tap-the/16-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-14",
-    "file": "/anh/nhom-tap-the/18-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-15",
-    "file": "/anh/nhom-tap-the/20-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-16",
-    "file": "/anh/nhom-tap-the/21-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-17",
-    "file": "/anh/nhom-tap-the/26-640%20(1).webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-18",
-    "file": "/anh/nhom-tap-the/27-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-19",
-    "file": "/anh/nhom-tap-the/39-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-20",
-    "file": "/anh/nhom-tap-the/46-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-21",
-    "file": "/anh/nhom-tap-the/nh-12-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-22",
-    "file": "/anh/nhom-tap-the/nh-13-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-23",
-    "file": "/anh/nhom-tap-the/nh-25-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-24",
-    "file": "/anh/nhom-tap-the/nh-26-480%20(1).avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-25",
-    "file": "/anh/nhom-tap-the/nh-29-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-26",
-    "file": "/anh/nhom-tap-the/nh-32-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-27",
-    "file": "/anh/nhom-tap-the/nh-35-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-28",
-    "file": "/anh/nhom-tap-the/tx-04-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-29",
-    "file": "/anh/nhom-tap-the/tx-12-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-30",
-    "file": "/anh/nhom-tap-the/tx-15-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-31",
-    "file": "/anh/nhom-tap-the/tx-16-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-32",
-    "file": "/anh/nhom-tap-the/tx-25-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-33",
-    "file": "/anh/nhom-tap-the/tx-30-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-34",
-    "file": "/anh/nhom-tap-the/tx-33-480.avif",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-35",
-    "file": "/anh/nhom-tap-the/umt8fgmcl-302i-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-36",
-    "file": "/anh/nhom-tap-the/umt8fm151-309p-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-37",
-    "file": "/anh/nhom-tap-the/umt8fm1ta-qddp-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-38",
-    "file": "/anh/nhom-tap-the/umt8fm21c-ny5j-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-39",
-    "file": "/anh/nhom-tap-the/umt8fm2aq-zqv2-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
-    "id": "nhom-tap-the-40",
-    "file": "/anh/nhom-tap-the/umt8fm706-jm1f-640.webp",
-    "nhom": "nhom-tap-the"
-  },
-  {
     "id": "thanh-xuan-1",
-    "file": "/anh/thanh-xuan/02-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-2",
-    "file": "/anh/thanh-xuan/06-640%20(1).webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-3",
-    "file": "/anh/thanh-xuan/07-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-4",
-    "file": "/anh/thanh-xuan/08-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-5",
-    "file": "/anh/thanh-xuan/09-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-6",
-    "file": "/anh/thanh-xuan/11-640%20(1).webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-7",
-    "file": "/anh/thanh-xuan/16-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-8",
-    "file": "/anh/thanh-xuan/22-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-9",
-    "file": "/anh/thanh-xuan/24-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-10",
-    "file": "/anh/thanh-xuan/68-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-11",
     "file": "/anh/thanh-xuan/739508886_960081600421613_656368550136354214_n.jpg",
     "nhom": "thanh-xuan"
   },
   {
-    "id": "thanh-xuan-12",
+    "id": "thanh-xuan-2",
     "file": "/anh/thanh-xuan/739841009_960081650421608_664561352571734422_n.jpg",
     "nhom": "thanh-xuan"
   },
   {
-    "id": "thanh-xuan-13",
+    "id": "thanh-xuan-3",
     "file": "/anh/thanh-xuan/762804091_984443651318741_8973474888030583339_n.jpg",
     "nhom": "thanh-xuan"
   },
   {
-    "id": "thanh-xuan-14",
+    "id": "thanh-xuan-4",
     "file": "/anh/thanh-xuan/763065160_984443797985393_6537961437878386648_n.jpg",
     "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-15",
-    "file": "/anh/thanh-xuan/cd-03-480.avif",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-16",
-    "file": "/anh/thanh-xuan/cd-05-480.avif",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-17",
-    "file": "/anh/thanh-xuan/cd-10-480.avif",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-18",
-    "file": "/anh/thanh-xuan/cd-15-480.avif",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-19",
-    "file": "/anh/thanh-xuan/cd-18-480.avif",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-20",
-    "file": "/anh/thanh-xuan/cd-36-480.avif",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-21",
-    "file": "/anh/thanh-xuan/nh-26-480.avif",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-22",
-    "file": "/anh/thanh-xuan/tx-25-480.avif",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-23",
-    "file": "/anh/thanh-xuan/tx-29-480.avif",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-24",
-    "file": "/anh/thanh-xuan/umt8fbefk-rfgy-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-25",
-    "file": "/anh/thanh-xuan/umt8fgm8f-ruy5-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "thanh-xuan-26",
-    "file": "/anh/thanh-xuan/umt8gnurp-jbfl-640.webp",
-    "nhom": "thanh-xuan"
-  },
-  {
-    "id": "truyen-thong-1",
-    "file": "/anh/truyen-thong/03-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-2",
-    "file": "/anh/truyen-thong/09-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-3",
-    "file": "/anh/truyen-thong/12-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-4",
-    "file": "/anh/truyen-thong/21-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-5",
-    "file": "/anh/truyen-thong/24-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-6",
-    "file": "/anh/truyen-thong/27-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-7",
-    "file": "/anh/truyen-thong/28-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-8",
-    "file": "/anh/truyen-thong/29-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-9",
-    "file": "/anh/truyen-thong/51-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-10",
-    "file": "/anh/truyen-thong/nh-26-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-11",
-    "file": "/anh/truyen-thong/td-12-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-12",
-    "file": "/anh/truyen-thong/td-13-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-13",
-    "file": "/anh/truyen-thong/td-21-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-14",
-    "file": "/anh/truyen-thong/td-22-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-15",
-    "file": "/anh/truyen-thong/td-30-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-16",
-    "file": "/anh/truyen-thong/td-31-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-17",
-    "file": "/anh/truyen-thong/td-34-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-18",
-    "file": "/anh/truyen-thong/td-41-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-19",
-    "file": "/anh/truyen-thong/tx-18-480.avif",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-20",
-    "file": "/anh/truyen-thong/umt8ccamb-bztb-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-21",
-    "file": "/anh/truyen-thong/umt8ccbej-ipzg-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-22",
-    "file": "/anh/truyen-thong/umt8ccbnq-fvi4-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-23",
-    "file": "/anh/truyen-thong/umt8ccfn2-jl14-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-24",
-    "file": "/anh/truyen-thong/umt8ccg6z-dp92-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-25",
-    "file": "/anh/truyen-thong/umt8ccgwh-s0lj-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-26",
-    "file": "/anh/truyen-thong/umt8cchbo-4bh7-640.webp",
-    "nhom": "truyen-thong"
-  },
-  {
-    "id": "truyen-thong-27",
-    "file": "/anh/truyen-thong/umt8go7zo-sfa7-640.webp",
-    "nhom": "truyen-thong"
   }
 ];
