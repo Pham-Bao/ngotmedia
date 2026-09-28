@@ -1683,6 +1683,15 @@ export const danhSachAnh: AnhBoSuuTap[] = [
   },
   {
     "id": "truyen-thong-3",
+    "file": "/anh/truyen-thong/b3dd8bb030774307aff95c806f13a61d~tplv-photomode-image.jpeg",
+    "nho": "/anh-nho/truyen-thong/b3dd8bb030774307aff95c806f13a61d~tplv-photomode-image.webp",
+    "vua": "/anh-vua/truyen-thong/b3dd8bb030774307aff95c806f13a61d~tplv-photomode-image.webp",
+    "rong": 480,
+    "cao": 720,
+    "nhom": "truyen-thong"
+  },
+  {
+    "id": "truyen-thong-4",
     "file": "/anh/truyen-thong/DSC00031.jpg",
     "nho": "/anh-nho/truyen-thong/DSC00031.webp",
     "vua": "/anh-vua/truyen-thong/DSC00031.webp",
@@ -1691,7 +1700,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-4",
+    "id": "truyen-thong-5",
     "file": "/anh/truyen-thong/HAN05298.jpg",
     "nho": "/anh-nho/truyen-thong/HAN05298.webp",
     "vua": "/anh-vua/truyen-thong/HAN05298.webp",
@@ -1700,7 +1709,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-5",
+    "id": "truyen-thong-6",
     "file": "/anh/truyen-thong/HAN07752.jpg",
     "nho": "/anh-nho/truyen-thong/HAN07752.webp",
     "vua": "/anh-vua/truyen-thong/HAN07752.webp",
@@ -1709,7 +1718,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-6",
+    "id": "truyen-thong-7",
     "file": "/anh/truyen-thong/MAD_8310.jpg",
     "nho": "/anh-nho/truyen-thong/MAD_8310.webp",
     "vua": "/anh-vua/truyen-thong/MAD_8310.webp",
@@ -1718,7 +1727,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-7",
+    "id": "truyen-thong-8",
     "file": "/anh/truyen-thong/NCM_1860.jpg",
     "nho": "/anh-nho/truyen-thong/NCM_1860.webp",
     "vua": "/anh-vua/truyen-thong/NCM_1860.webp",
@@ -1727,7 +1736,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-8",
+    "id": "truyen-thong-9",
     "file": "/anh/truyen-thong/NCM_1894.jpg",
     "nho": "/anh-nho/truyen-thong/NCM_1894.webp",
     "vua": "/anh-vua/truyen-thong/NCM_1894.webp",
@@ -1736,7 +1745,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-9",
+    "id": "truyen-thong-10",
     "file": "/anh/truyen-thong/NCM_8998.jpg",
     "nho": "/anh-nho/truyen-thong/NCM_8998.webp",
     "vua": "/anh-vua/truyen-thong/NCM_8998.webp",
@@ -1745,7 +1754,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-10",
+    "id": "truyen-thong-11",
     "file": "/anh/truyen-thong/NCM_9369.jpg",
     "nho": "/anh-nho/truyen-thong/NCM_9369.webp",
     "vua": "/anh-vua/truyen-thong/NCM_9369.webp",
@@ -1754,7 +1763,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-11",
+    "id": "truyen-thong-12",
     "file": "/anh/truyen-thong/NTQ_4788.jpg",
     "nho": "/anh-nho/truyen-thong/NTQ_4788.webp",
     "vua": "/anh-vua/truyen-thong/NTQ_4788.webp",
@@ -1763,7 +1772,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-12",
+    "id": "truyen-thong-13",
     "file": "/anh/truyen-thong/PTT04551.jpg",
     "nho": "/anh-nho/truyen-thong/PTT04551.webp",
     "vua": "/anh-vua/truyen-thong/PTT04551.webp",
@@ -1772,7 +1781,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-13",
+    "id": "truyen-thong-14",
     "file": "/anh/truyen-thong/QQ_00689.jpg",
     "nho": "/anh-nho/truyen-thong/QQ_00689.webp",
     "vua": "/anh-vua/truyen-thong/QQ_00689.webp",
@@ -1781,7 +1790,7 @@ export const danhSachAnh: AnhBoSuuTap[] = [
     "nhom": "truyen-thong"
   },
   {
-    "id": "truyen-thong-14",
+    "id": "truyen-thong-15",
     "file": "/anh/truyen-thong/SEN_8625.jpg",
     "nho": "/anh-nho/truyen-thong/SEN_8625.webp",
     "vua": "/anh-vua/truyen-thong/SEN_8625.webp",
